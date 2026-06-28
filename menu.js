@@ -100,6 +100,15 @@ function injectPlaylistUI() {
 
 injectPlaylistUI();
 
+const injectedPlaylistPanel = document.querySelector('.playlist-panel');
+const injectedPlaylistToggle = document.getElementById('playlistToggle');
+if (injectedPlaylistPanel && !injectedPlaylistPanel.classList.contains('hidden')) {
+  injectedPlaylistPanel.classList.add('hidden');
+}
+if (injectedPlaylistToggle) {
+  injectedPlaylistToggle.setAttribute('aria-expanded', 'false');
+}
+
 let currentTrackIndex = 0;
 let spotifyMode = false;
 const audio = document.getElementById("backgroundAudio");
