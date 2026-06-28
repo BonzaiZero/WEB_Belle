@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" data-theme="rose">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Romantic Menu</title>
+  <script>
+    try {
+      if (sessionStorage.getItem("romantic-site-loading-seen")) {
+        document.documentElement.classList.add("skip-loading");
+      }
+    } catch {}
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="menu-page">
+  <div class="loading-screen" id="loadingScreen" aria-live="polite">
+    <div class="loader-card">
+      <div class="envelope-mark" aria-hidden="true">
+        <span></span>
+      </div>
+      <h1>Loading</h1>
+      <div class="loading-track" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="background-stage" aria-hidden="true">
+    <div class="sky-layer"></div>
+    <div class="pattern-layer"></div>
+    <div class="menu-dreamscape">
+      <div class="heart-strings">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="sky-hearts">
+        <i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <div class="cloud-band cloud-band-back"></div>
+      <div class="cloud-band cloud-band-mid"></div>
+      <div class="cloud-band cloud-band-front"></div>
+    </div>
+    <div class="floating floating-one">&#9829;</div>
+    <div class="floating floating-two">&#9825;</div>
+    <div class="floating floating-three">&#10022;</div>
+    <div class="scene-layer">
+      <div class="moon"></div>
+      <div class="cloud cloud-a"></div>
+      <div class="cloud cloud-b"></div>
+      <div class="little-house">
+        <span></span>
+      </div>
+      <div class="garden-row">
+        <i></i><i></i><i></i><i></i><i></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="settings-panel" id="settingsPanel">
+    <button class="settings-toggle" type="button" id="settingsToggle" aria-label="Open color settings" aria-expanded="false" aria-controls="settingsMenu">
+      <span aria-hidden="true"></span>
+    </button>
+    <div class="settings-menu" id="settingsMenu">
+      <div class="settings-title">
+        <span>Warna Tema</span>
+        <strong id="themeName">Rose Garden</strong>
+      </div>
+      <div class="settings-description">
+        Pilih palet warna untuk menu utama.
+      </div>
+      <div class="settings-themes" role="group" aria-label="Choose theme color">
+        <button class="theme-dot active" type="button" data-theme-choice="rose" aria-label="Rose theme" aria-pressed="true">
+          <span class="swatch rose-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="night" aria-label="Night theme" aria-pressed="false">
+          <span class="swatch night-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="picnic" aria-label="Picnic theme" aria-pressed="false">
+          <span class="swatch picnic-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="clouds" aria-label="Clouds theme" aria-pressed="false">
+          <span class="swatch clouds-swatch" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <button class="playlist-toggle" type="button" id="playlistToggle" aria-label="Open playlist" aria-expanded="true" aria-controls="playlistPanel">
+    <span aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" fill="currentColor"/>
+      </svg>
+    </span>
+  </button>
+
+  <div class="playlist-panel" aria-label="Playlist musik latar">
+    <div class="playlist-meta">
+      <strong id="playlistTrackTitle">Melodi Senja</strong>
+      <small id="playlistTrackIndex">1 / 3</small>
+    </div>
+    <div class="playlist-controls">
+      <button class="playlist-control prev-button" type="button" aria-label="Lagu sebelumnya">Prev</button>
+      <button class="playlist-control play-button" type="button" aria-label="Putar atau jeda">Play</button>
+      <button class="playlist-control next-button" type="button" aria-label="Lagu berikutnya">Next</button>
+    </div>
+    <div class="playlist-list" id="playlistList" aria-label="Daftar lagu"></div>
+    <div class="playlist-player" hidden>
+      <iframe id="spotifyPlayerFrame" src="" allow="autoplay; clipboard-write; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <audio id="backgroundAudio" preload="metadata"></audio>
+  </div>
+
+  <main class="menu-shell">
+    <section class="menu-card" aria-labelledby="menuTitle">
+      <h1 id="menuTitle">Mau buka yang mana?</h1>
+      <nav class="home-menu" aria-label="Main menu">
+        <a class="menu-link letter-link active" href="surat.html">
+          <span class="menu-icon letter-icon" aria-hidden="true"><span></span></span>
+          <span class="menu-copy">
+            <strong>Surat nih</strong>
+          </span>
+        </a>
+        <a class="menu-link photo-link" href="photos.html">
+          <span class="menu-icon photo-icon" aria-hidden="true"><span></span></span>
+          <span class="menu-copy">
+            <strong>Lihat Album</strong>
+          </span>
+        </a>
+        <a class="menu-link favorite-link" href="favorites.html">
+          <span class="menu-icon favorites-icon" aria-hidden="true"><span>&#10084;</span></span>
+          <span class="menu-copy">
+            <strong>Favorit</strong>
+          </span>
+        </a>
+        <a class="menu-link anime-link" href="anime.html">
+          <span class="menu-icon anime-icon" aria-hidden="true"><span>ア</span></span>
+          <span class="menu-copy">
+            <strong>Anime</strong>
+          </span>
+        </a>
+        <a class="menu-link manhwa-link" href="manhwa.html">
+          <span class="menu-icon manhwa-icon" aria-hidden="true"><span>マ</span></span>
+          <span class="menu-copy">
+            <strong>Manhwa</strong>
+          </span>
+        </a>
+      </nav>
+    </section>
+</main>
+
+    <script src="theme.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>
