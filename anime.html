@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-theme="rose">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anime</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="anime-page">
+  <div class="loading-screen" id="loadingScreen" aria-live="polite">
+    <div class="loader-card">
+      <div class="envelope-mark" aria-hidden="true">
+        <span></span>
+      </div>
+      <h1>Loading</h1>
+      <div class="loading-track" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <div class="background-stage" aria-hidden="true"></div>
+  <div class="settings-panel" id="settingsPanel">
+    <button class="settings-toggle" type="button" id="settingsToggle" aria-label="Open background settings" aria-expanded="false" aria-controls="settingsMenu">
+      <span aria-hidden="true"></span>
+    </button>
+    <div class="settings-menu" id="settingsMenu">
+      <div class="settings-title">
+        <span>Background</span>
+        <strong id="themeName">Rose Garden</strong>
+      </div>
+      <div class="settings-themes" role="group" aria-label="Choose background">
+        <button class="theme-dot active" type="button" data-theme-choice="rose" aria-label="Rose background" aria-pressed="true">
+          <span class="swatch rose-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="night" aria-label="Moon background" aria-pressed="false">
+          <span class="swatch night-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="picnic" aria-label="Picnic background" aria-pressed="false">
+          <span class="swatch picnic-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="clouds" aria-label="Clouds background" aria-pressed="false">
+          <span class="swatch clouds-swatch" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <a class="back-link letter-back-link" href="index.html">Menu</a>
+
+  <button class="playlist-toggle" type="button" id="playlistToggle" aria-label="Open playlist" aria-expanded="false" aria-controls="playlistPanel">
+    <span aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" fill="currentColor"/>
+      </svg>
+    </span>
+  </button>
+
+  <div class="playlist-panel" aria-label="Playlist musik latar">
+    <div class="playlist-meta">
+      <strong id="playlistTrackTitle">Melodi Senja</strong>
+      <small id="playlistTrackIndex">1 / 3</small>
+    </div>
+    <div class="playlist-controls">
+      <button class="playlist-control prev-button" type="button" aria-label="Lagu sebelumnya">Prev</button>
+      <button class="playlist-control play-button" type="button" aria-label="Putar atau jeda">Play</button>
+      <button class="playlist-control next-button" type="button" aria-label="Lagu berikutnya">Next</button>
+    </div>
+    <div class="playlist-list" id="playlistList" aria-label="Daftar lagu"></div>
+    <div class="playlist-player" hidden>
+      <iframe id="spotifyPlayerFrame" src="" allow="autoplay; clipboard-write; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <audio id="backgroundAudio" preload="metadata"></audio>
+  </div>
+
+  <main class="album-shell">
+    <header class="album-hero">
+      <div>
+        <h1>Anime</h1>
+        <p>Kumpulan serial dan karakter favorit.</p>
+      </div>
+    </header>
+
+    <section class="photo-panel" aria-label="Anime collection box">
+      <div class="photo-panel-header">
+        <p class="photo-section-title">Koori no Jouheki</p>
+      </div>
+      <div class="photo-grid">
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/f36033fdb87e0951f6ec2db514ba6eee.jpg" alt="f36033fdb87e0951f6ec2db514ba6eee">
+          </figure>
+          <div>
+          </div>
+        </article>
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/7ec26b7d83e94bc91a702e96351747d6.jpg" alt="7ec26b7d83e94bc91a702e96351747d6">
+          </figure>
+          <div>
+            <strong>Koyuki Hikawa</strong>
+            <small>(favorite character)</small>
+          </div>
+        </article>
+      </div>
+    </section>
+    
+    <section class="photo-panel" aria-label="Anime collection box">
+      <div class="photo-panel-header">
+        <p class="photo-section-title">NANA</p>
+      </div>
+      <div class="photo-grid">
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/a181af165882c8385af9998b68652830.jpg" alt="a181af165882c8385af9998b68652830">
+          </figure>
+          <div>
+          </div>
+        </article>
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/94f17ba75cd3e38da098b9317a21951e.jpg" alt="94f17ba75cd3e38da098b9317a21951e">
+          </figure>
+          <div>
+            <strong>Nana Osaki</strong>
+            <small>(favorite character)</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="photo-panel" aria-label="Anime collection box">
+      <div class="photo-panel-header">
+        <p class="photo-section-title">Violet Evergarden</p>
+      </div>
+      <div class="photo-grid">
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/MV5BMWUwNDFiNjQtYjQ0MC00MTcxLWE0MGQtNTdkYTlhZGU2NDFmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="MV5BMWUwNDFiNjQtYjQ0MC00MTcxLWE0MGQtNTdkYTlhZGU2NDFmXkEyXkFqcGc@._V1_FMjpg_UX1000_">
+          </figure>
+          <div>
+          </div>
+        </article>
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/1c3a3ab5b8f13c64affddcdd48062fe5.jpg" alt="1c3a3ab5b8f13c64affddcdd48062fe5">
+          </figure>
+          <div>
+            <strong>Violet Evergar</strong>
+            <small>(favorite character)</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="photo-panel" aria-label="Anime collection box">
+      <div class="photo-panel-header">
+        <p class="photo-section-title">Yahari Ore no Seishun Love Comedy wa Machigatteiru</p>
+      </div>
+      <div class="photo-grid">
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/Oregairu.webp" alt="Oregairu">
+          </figure>
+          <div>
+          </div>
+        </article>
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/28c88ebc2939d0398c683c842f676f59.jpg" alt="28c88ebc2939d0398c683c842f676f59">
+          </figure>
+          <div>
+            <strong>Nana Osaki</strong>
+            <small>(favorite character)</small>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="theme.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>

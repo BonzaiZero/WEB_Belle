@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" data-theme="rose">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Favorit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="favorites-page">
+  <div class="loading-screen" id="loadingScreen" aria-live="polite">
+    <div class="loader-card">
+      <div class="envelope-mark" aria-hidden="true">
+        <span></span>
+      </div>
+      <h1>Loading</h1>
+      <div class="loading-track" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <div class="background-stage" aria-hidden="true"></div>
+
+  <div class="settings-panel" id="settingsPanel">
+    <button class="settings-toggle" type="button" id="settingsToggle" aria-label="Open color settings" aria-expanded="false" aria-controls="settingsMenu">
+      <span aria-hidden="true"></span>
+    </button>
+    <div class="settings-menu" id="settingsMenu">
+      <div class="settings-title">
+        <span>Warna Tema</span>
+        <strong id="themeName">Rose Garden</strong>
+      </div>
+      <div class="settings-description">
+        Pilih palet warna untuk halaman favorit.
+      </div>
+      <div class="settings-themes" role="group" aria-label="Choose theme color">
+        <button class="theme-dot active" type="button" data-theme-choice="rose" aria-label="Rose theme" aria-pressed="true">
+          <span class="swatch rose-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="night" aria-label="Night theme" aria-pressed="false">
+          <span class="swatch night-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="picnic" aria-label="Picnic theme" aria-pressed="false">
+          <span class="swatch picnic-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="clouds" aria-label="Clouds theme" aria-pressed="false">
+          <span class="swatch clouds-swatch" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <a class="back-link letter-back-link" href="index.html">Menu</a>
+  <button class="playlist-toggle" type="button" id="playlistToggle" aria-label="Open playlist" aria-expanded="false" aria-controls="playlistPanel">
+    <span aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" fill="currentColor"/>
+      </svg>
+    </span>
+  </button>
+
+  <main class="album-shell">
+    <section class="photo-panel" aria-labelledby="favoriteTitle">
+      <div class="photo-panel-header">
+        <div>
+          <h1 id="favoriteTitle">Hobi</h1>
+          <strong>Hobi yang kamu paling suka</strong>
+        </div>
+      </div>
+      <div class="photo-grid favorites-grid" id="favoriteGrid" aria-label="Favorite collection">
+        <article class="favorite-card">
+          <figure class="uploaded-frame">
+            <img src="assets/photo/ChatGPT Image Jun 28, 2026, 12_24_40 AM.png" alt="ChatGPT Image Jun 28, 2026, 12_24_40 AM">
+          </figure>
+          <div class="favorite-copy">
+            <strong>Badminton</strong>
+          </div>
+        </article>
+        <article class="favorite-card">
+          <figure class="uploaded-frame">
+            <img src="assets/photo/ChatGPT Image Jun 28, 2026, 12_29_04 AM.png" alt="ChatGPT Image Jun 28, 2026, 12_29_04 AM">
+          </figure>
+          <div class="favorite-copy">
+            <strong>Jogging</strong>
+          </div>
+        </article>
+        <div>
+          <strong>Sorry udah meng AI foto kamu hehehehehe😜</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-panel" aria-labelledby="favoriteTitle">
+      <div class="photo-panel-header">
+        <div>
+          <h1 id="favoriteTitle">Makanan</h1>
+          <strong>Makanan yang kamu paling suka</strong>
+        </div>
+      </div>
+      <div class="photo-grid favorites-grid" id="favoriteGrid" aria-label="Favorite collection">
+        <article class="favorite-card">
+          <figure class="uploaded-frame">
+            <img src="assets/komponen/68793579baff1601c623e01b4ad994a3.jpg" alt="68793579baff1601c623e01b4ad994a3">
+          </figure>
+          <div class="favorite-copy">
+            <strong>Mie</strong>
+            <p>aku pilih gambar ini karena kamu dulu sering bilang kamu suka gacoan</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="photo-panel" aria-labelledby="favoriteTitle">
+      <div class="photo-panel-header">
+        <div>
+          <h1 id="favoriteTitle">Minuman</h1>
+          <strong>Minuman yang kamu paling suka</strong>
+        </div>
+      </div>
+      <div class="photo-grid favorites-grid" id="favoriteGrid" aria-label="Favorite collection">
+        <article class="favorite-card">
+          <figure class="uploaded-frame">
+            <img src="assets/komponen/cfeb7a717c59579553c1c7572bcaa2ba.jpg" alt="cfeb7a717c59579553c1c7572bcaa2ba">
+          </figure>
+          <div class="favorite-copy">
+            <strong>Matcha Oat</strong>
+            <p>aku sering denger kamu paling suka minum matcha, dan mu pernah foto juga mu beli es atau minum banyak bet itu isi nya matcha semua 😂</p>
+          </div>
+        </article>
+        <article class="favorite-card">
+          <figure class="uploaded-frame">
+            <img src="assets/komponen/2a058e716b5e96138086095d6de8fc39.jpg" alt="2a058e716b5e96138086095d6de8fc39">
+          </figure>
+          <div class="favorite-copy">
+            <strong>Cafe Mocha</strong>
+            <p>kamu dulu sering bilang kamu suka minum kopi, aku ga ekspek kamu suka cafe mocha soalnya mu sering bilang mu lagi minum americano terus</p>
+          </div>
+        </article>
+        <article class="favorite-card">
+          <figure class="uploaded-frame">
+            <img src="assets/komponen/3753e30fdca75c9243fb844a7f17660f.jpg" alt="3753e30fdca75c9243fb844a7f17660f">
+          </figure>
+          <div class="favorite-copy">
+            <strong>Coklat</strong>
+            <p>kalau coklat jujur aku baru tau hehehehehe soalnya kalau ga salah kamu ga pernah bilang kamu minum coklat 😜</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  
+
+  <script src="theme.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>

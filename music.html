@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" data-theme="rose">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="music-page">
+  <div class="background-stage" aria-hidden="true"></div>
+  <div class="settings-panel" id="settingsPanel">
+    <button class="settings-toggle" type="button" id="settingsToggle" aria-label="Open background settings" aria-expanded="false" aria-controls="settingsMenu">
+      <span aria-hidden="true"></span>
+    </button>
+    <div class="settings-menu" id="settingsMenu">
+      <div class="settings-title">
+        <span>Background</span>
+        <strong id="themeName">Rose Garden</strong>
+      </div>
+      <div class="settings-themes" role="group" aria-label="Choose background">
+        <button class="theme-dot active" type="button" data-theme-choice="rose" aria-label="Rose background" aria-pressed="true">
+          <span class="swatch rose-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="night" aria-label="Moon background" aria-pressed="false">
+          <span class="swatch night-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="picnic" aria-label="Picnic background" aria-pressed="false">
+          <span class="swatch picnic-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="clouds" aria-label="Clouds background" aria-pressed="false">
+          <span class="swatch clouds-swatch" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main class="music-shell">
+    <a class="back-link letter-back-link" href="index.html">Menu</a>
+    <section class="music-card">
+      <p class="eyebrow">Playlist kecil</p>
+      <h1>Pilihan lagu</h1>
+      <p>Biarkan lagu-lagu manis menemani setiap kata yang tertulis.</p>
+
+      <div class="music-list">
+        <article class="music-item" data-external-url="https://open.spotify.com/intl-id/track/630DpnzdfjdVqv2yLfPbAX?si=01037abc39ff47b0">
+          <strong>Playlist Nadin</strong>
+          <p>Tenang, hangat, cocok untuk membaca surat.</p>
+          <button class="playlist-button" type="button">Play</button>
+        </article>
+        <article class="music-item" data-external-url="https://open.spotify.com/intl-id/track/2vMc8rqFmqs7RFi8NDx0CJ?si=5859c6588fdb4e93">
+          <strong>Rindu Lembut</strong>
+          <p>Suara lembut yang membuat hati melayang.</p>
+          <button class="playlist-button" type="button">Play</button>
+        </article>
+        <article class="music-item" data-external-url="https://youtu.be/2Vv-BfVoq4g">
+          <strong>Langit Malaikat</strong>
+          <p>Nuansa lembut dan damai untuk sedikit melamun.</p>
+          <button class="playlist-button" type="button">Play</button>
+        </article>
+      </div>
+
+      <div class="player-output" hidden>
+        <div class="player-meta">
+          <strong id="playingLabel">Tekan Play untuk memutar</strong>
+        </div>
+        <div class="player-frame" id="playerFrame"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="theme.js"></script>
+  <script src="menu.js"></script>
+  <script>
+    const playlistButtons = document.querySelectorAll('.playlist-button');
+    const playerOutput = document.querySelector('.player-output');
+    const playerFrame = document.getElementById('playerFrame');
+    const playingLabel = document.getElementById('playingLabel');
+
+    function normalizeEmbedUrl(url) {
+      try {
+        const parsed = new URL(url);
+        if (parsed.hostname.includes('youtube.com')) {
+          const videoId = parsed.searchParams.get('v');
+          if (videoId) return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+          return null;
+        }
+        if (parsed.hostname.includes('youtu.be')) {
+          const videoId = parsed.pathname.slice(1);
+          if (videoId) return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+          return null;
+        }
+        if (parsed.hostname.includes('spotify.com')) {
+          const path = parsed.pathname.replace('/track/', '/embed/track/').replace('/playlist/', '/embed/playlist/').replace('/album/', '/embed/album/');
+          return `https://open.spotify.com${path}`;
+        }
+      } catch {
+        return null;
+      }
+      return null;
+    }
+
+    function loadTrack(button) {
+      const item = button.closest('.music-item');
+      const url = item.dataset.externalUrl;
+      const title = item.querySelector('strong').textContent;
+      const embedUrl = normalizeEmbedUrl(url);
+      if (!embedUrl) return;
+
+      playerFrame.innerHTML = `<iframe src="${embedUrl}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      playerOutput.hidden = false;
+      playingLabel.textContent = `Memainkan: ${title}`;
+    }
+
+    playlistButtons.forEach((button) => {
+      button.addEventListener('click', () => loadTrack(button));
+    });  </script>
+</body>
+</html>

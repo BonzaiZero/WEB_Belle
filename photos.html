@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" data-theme="rose">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kumpulan Foto</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="photos-page">
+  <div class="loading-screen" id="loadingScreen" aria-live="polite">
+    <div class="loader-card">
+      <div class="envelope-mark" aria-hidden="true">
+        <span></span>
+      </div>
+      <h1>Loading</h1>
+      <div class="loading-track" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <div class="background-stage" aria-hidden="true"></div>
+  <div class="heart-strings" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="settings-panel" id="settingsPanel">
+    <button class="settings-toggle" type="button" id="settingsToggle" aria-label="Open background settings" aria-expanded="false" aria-controls="settingsMenu">
+      <span aria-hidden="true"></span>
+    </button>
+    <div class="settings-menu" id="settingsMenu">
+      <div class="settings-title">
+        <span>Background</span>
+        <strong id="themeName">Rose Garden</strong>
+      </div>
+      <div class="settings-themes" role="group" aria-label="Choose background">
+        <button class="theme-dot active" type="button" data-theme-choice="rose" aria-label="Rose background" aria-pressed="true">
+          <span class="swatch rose-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="night" aria-label="Moon background" aria-pressed="false">
+          <span class="swatch night-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="picnic" aria-label="Picnic background" aria-pressed="false">
+          <span class="swatch picnic-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="clouds" aria-label="Clouds background" aria-pressed="false">
+          <span class="swatch clouds-swatch" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <a class="back-link letter-back-link" href="index.html" aria-label="Back to menu page">Menu</a>
+
+  <main class="album-shell">
+    <header class="album-hero">
+      <div>
+        <p class="eyebrow">Memory album</p>
+        <h1>Album Imut</h1>
+        <p>Foto-foto yang pernah kamu kirim</p>
+      </div>
+      
+    </header>
+
+    <section class="photo-panel" aria-label="Photo collection box">
+      <div class="photo-panel-header">
+        <p class="photo-section-title">Koleksi Foto</p>
+      </div>
+      <div class="photo-grid" id="photoGrid">
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/photo/IMG-20260505-WA0000.jpg" alt="IMG-20260505-WA0000">
+          </figure>
+        </article>
+
+        <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/IMG_20260602_125033_323.webp" alt="IMG-20260602_125033_323">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.09.jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.09">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.12 (1).jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.12 (1)">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.10.jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.10">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.12.jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.12">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.12 (2).jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.12 (2)">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.13.jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.13">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.15.jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.15">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.15 (1).jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.15 (1)">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.15 (2).jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.15 (2)">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.16.jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.16">
+        </figure>
+      </article>
+       <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.38.23.jpeg" alt="WhatsApp Image 2026-06-27 at 23.38.23">
+        </figure>
+      </article>
+       <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.38.24.jpeg" alt="WhatsApp Image 2026-06-27 at 23.38.24">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.38.24 (1).jpeg" alt="WhatsApp Image 2026-06-27 at 23.38.24 (1)">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.13 (1).jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.13 (1)">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.13 (2).jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.13 (2)">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.14 (1).jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.14 (1)">
+        </figure>
+      </article>
+      <article class="photo-card uploaded-card">
+        <figure class="uploaded-frame">
+          <img src="assets/photo/WhatsApp Image 2026-06-27 at 23.36.14 (2).jpeg" alt="WhatsApp Image 2026-06-27 at 23.36.14 (2)">
+        </figure>
+      </article>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="theme.js"></script>
+  <script src="photos.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>

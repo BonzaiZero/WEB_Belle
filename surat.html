@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" data-theme="rose">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Love Letter Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="letter-page">
+  <div class="loading-screen" id="loadingScreen" aria-live="polite">
+    <div class="loader-card">
+      <div class="envelope-mark" aria-hidden="true">
+        <span></span>
+      </div>
+      <h1>Loading</h1>
+      <div class="loading-track" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <div class="background-stage" aria-hidden="true"></div>
+
+  <!-- settings panel removed on surat page per request -->
+
+  <main class="app-shell">
+    <a class="back-link letter-back-link" href="index.html">Menu</a>
+    <section class="letter-workspace" aria-label="Romantic letter editor">
+      <div class="letter-paper">
+        <header class="letter-top">
+          <label>
+            <span>To</span>
+            <strong style="font-size: 30px;"> Anastasia Issabelle / GIV</strong>
+          </label>
+          <time id="letterDate"></time>
+        </header>
+
+        <label class="letter-body-label" for="letterBody">Your letter</label>
+        <textarea id="letterBody" spellcheck="true" readonly>Hey imut/belle, aku buat ini untuk kamu. Aku harap ini mengingatkanmu bahwa kamu lah orang yang kusuka.
+
+Mungkin yang kemaren perbuatan ku udah membuat mu sedih, merasa ga dihargai, ga butuh pendapat mu itu semua salahku. and here i am, trying to make this later to you. I know i cant change the past, but i will try to make you feel better, I want to be a better person for you, and i want to make you happy again.
+
+sorry im not a good person, im not a perfect man like others, sorry for all my mistakes i did to you, and i will try to be a better person for you. I want to make you happy, and i want to make you feel loved.
+
+Dan aku juga ingin ngasih tau kalau minum es itu jangan beli banyak-banyak tuh es, tidur jangan kemalaman atau sampai pagi, dan kalau kamu lihat aku OVT atau merasa nutup diri, ga apa untuk marahin aku segimana kamu mau sampai puas.
+
+Mungkin isi surat ini bisa membuat mu geli atau yang lain. its okey if you laugh or anything else, cuman ini surat ku untuk mu. Love You So Much Anastasia Issabelle. ❤️❤️</textarea>
+
+        <footer class="letter-signature">
+          <label>
+            <span>From</span>
+            <strong style="font-size: 30px;"> David</strong>
+          </label>
+          <div class="seal" aria-hidden="true">&#9829;</div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="theme.js"></script>
+  <script src="script.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>

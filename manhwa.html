@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" data-theme="rose">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manhwa</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="manhwa-page">
+  <div class="loading-screen" id="loadingScreen" aria-live="polite">
+    <div class="loader-card">
+      <div class="envelope-mark" aria-hidden="true">
+        <span></span>
+      </div>
+      <h1>Loading</h1>
+      <div class="loading-track" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <div class="background-stage" aria-hidden="true"></div>
+  <div class="settings-panel" id="settingsPanel">
+    <button class="settings-toggle" type="button" id="settingsToggle" aria-label="Open background settings" aria-expanded="false" aria-controls="settingsMenu">
+      <span aria-hidden="true"></span>
+    </button>
+    <div class="settings-menu" id="settingsMenu">
+      <div class="settings-title">
+        <span>Background</span>
+        <strong id="themeName">Rose Garden</strong>
+      </div>
+      <div class="settings-themes" role="group" aria-label="Choose background">
+        <button class="theme-dot active" type="button" data-theme-choice="rose" aria-label="Rose background" aria-pressed="true">
+          <span class="swatch rose-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="night" aria-label="Moon background" aria-pressed="false">
+          <span class="swatch night-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="picnic" aria-label="Picnic background" aria-pressed="false">
+          <span class="swatch picnic-swatch" aria-hidden="true"></span>
+        </button>
+        <button class="theme-dot" type="button" data-theme-choice="clouds" aria-label="Clouds background" aria-pressed="false">
+          <span class="swatch clouds-swatch" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <a class="back-link letter-back-link" href="index.html">Menu</a>
+
+  <button class="playlist-toggle" type="button" id="playlistToggle" aria-label="Open playlist" aria-expanded="false" aria-controls="playlistPanel">
+    <span aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" fill="currentColor"/>
+      </svg>
+    </span>
+  </button>
+
+  <div class="playlist-panel" aria-label="Playlist musik latar">
+    <div class="playlist-meta">
+      <strong id="playlistTrackTitle">Melodi Senja</strong>
+      <small id="playlistTrackIndex">1 / 3</small>
+    </div>
+    <div class="playlist-controls">
+      <button class="playlist-control prev-button" type="button" aria-label="Lagu sebelumnya">Prev</button>
+      <button class="playlist-control play-button" type="button" aria-label="Putar atau jeda">Play</button>
+      <button class="playlist-control next-button" type="button" aria-label="Lagu berikutnya">Next</button>
+    </div>
+    <div class="playlist-list" id="playlistList" aria-label="Daftar lagu"></div>
+    <div class="playlist-player" hidden>
+      <iframe id="spotifyPlayerFrame" src="" allow="autoplay; clipboard-write; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <audio id="backgroundAudio" preload="metadata"></audio>
+  </div>
+
+  <main class="album-shell">
+    <header class="album-hero">
+      <div>
+        <p class="eyebrow">Manhwa library</p>
+        <h1>Manhwa</h1>
+        <p>Kumpulan cerita manhwa favorit dan rekomendasi.</p>
+      </div>
+    </header>
+
+    <section class="photo-panel" aria-label="manhwa collection box">
+      <div class="photo-panel-header">
+        <p class="photo-section-title">Omniscient Reader's Viewpoint</p>
+      </div>
+      <div class="photo-grid">
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/2109.jpg" alt="2109">
+          </figure>
+          <div>
+          </div>
+        </article>
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/7704658ee60389a5f5a6f0eebf5a0083.jpg" alt="7704658ee60389a5f5a6f0eebf5a0083">
+          </figure>
+          <div>
+            <strong>Han Sooyoung</strong>
+            <small>(favorite character)</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+     <section class="photo-panel" aria-label="manhwa collection box">
+      <div class="photo-panel-header">
+        <p class="photo-section-title">Your Throne</p>
+      </div>
+      <div class="photo-grid">
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/your-throne-manhwa-752603.webp" alt="your-throne-manhwa-752603">
+          </figure>
+          <div>
+          </div>
+        </article>
+        <article class="photo-card uploaded-card">
+          <figure class="uploaded-frame">
+            <img src="assets/532721a9871e7586bdc36edbb4a176f9.jpg" alt="532721a9871e7586bdc36edbb4a176f9">
+          </figure>
+          <div>
+            <strong>Eros Orna Vasilios</strong>
+            <small>(Suami nya Belle)</small>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="theme.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>
