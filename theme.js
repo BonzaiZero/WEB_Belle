@@ -87,6 +87,20 @@
     playlistToggle.dataset.playlistToggleBound = 'true';
   }
 
+  // close panels on page load
+  if (settingsPanel) {
+    settingsPanel.classList.remove('open');
+  }
+  if (settingsToggle) {
+    settingsToggle.setAttribute('aria-expanded', 'false');
+  }
+  if (playlistPanel) {
+    playlistPanel.classList.add('hidden');
+  }
+  if (playlistToggle) {
+    playlistToggle.setAttribute('aria-expanded', 'false');
+  }
+
   setTheme(readTheme() || document.documentElement.dataset.theme || "rose");
 
   // Apply coder-configured surat background if provided
